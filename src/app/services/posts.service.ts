@@ -16,4 +16,9 @@ export class PostsService {
     // tslint:disable-next-line:no-unused-expression
     return this._http.get<IPost[]>(this.url);
   }
+
+  getPostById(id: number): Observable <IPost[]> {
+    // tslint:disable-next-line:no-unused-expression
+    return this._http.get<IPost[]>(this.url + '/' + id);
+  }
 }

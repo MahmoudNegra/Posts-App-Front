@@ -13,9 +13,11 @@
   </thead>
   <tbody>
     <tr *ngFor='let p of data |slice:0:10'>
-      <td>{{p.id}}</td>
-      <td>{{p.title}}</td>
-      <td>{{p.body}}</td>
+      <td>
+        <a [routerLink]="['/detail',p.id]" > {{p.id}} </a>
+      </td>
+      <td>  <a [routerLink]="['/detail',p.id]" > {{p.title}} </a></td>
+      <td>  <a [routerLink]="['/detail',p.id]" > {{p.body}} </a></td>
     </tr>
 
   </tbody>
