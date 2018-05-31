@@ -10,7 +10,7 @@ const my_routes = [
   {path: 'list'   , component: PotsListComponent},
   {path: 'welcome', component: WelcomeComponent},
   {path: 'detail/:id', canActivate : [PostdetailsGuard] , component: PostDetailsComponent},
-  {path: ''       , redirectTo: '/Welcome' , pathMatch: 'full'},
+  {path: ''       , redirectTo: '/welcome' , pathMatch: 'full'},
   {path: '**', component: NotfoundComponent}
 ] ;
 

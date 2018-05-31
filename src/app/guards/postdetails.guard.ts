@@ -8,15 +8,14 @@ import { Observable } from 'rxjs';
 })
 export class PostdetailsGuard implements CanActivate {
 
-  constructor( private _router: Router){}
+  constructor( private _router: Router) {}
 
   canActivate(
     next: ActivatedRouteSnapshot):  boolean  {
 
       const id  = next.url[1].path; // Récupérer le second argument de l'URL en le convertir en
 
-      if(isNaN(id) || (+id < 1) )
-      {
+      if (isNaN(+id) || (+id < 1) ) {
        alert(`Attention, le ${id} doit etre numérique, on vous redirigera vers la Home Page` ) ;
        this._router.navigate(['/welcome']);
        return false ;

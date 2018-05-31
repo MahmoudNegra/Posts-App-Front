@@ -8,8 +8,8 @@ import { Observable } from "rxjs";
 })
 export class PostsService {
 
- // url: string = 'https://jsonplaceholder.typicode.com/posts';
-    url: string = 'http://localhost:8080/api/posts';
+    url: string = 'https://jsonplaceholder.typicode.com/posts';
+    // url: string = 'http://localhost:8080/api/posts';
   constructor(private _http: HttpClient) {}
 
   getAllPosts(): Observable <IPost[]> {
@@ -17,8 +17,8 @@ export class PostsService {
     return this._http.get<IPost[]>(this.url);
   }
 
-  getPostById(id: number): Observable <IPost[]> {
+  getPostById(id: number): Observable <IPost> {
     // tslint:disable-next-line:no-unused-expression
-    return this._http.get<IPost[]>(this.url + '/' + id);
+    return this._http.get<IPost>(this.url + '/' + id);
   }
 }
