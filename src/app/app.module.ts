@@ -10,14 +10,8 @@ import { WelcomeComponent } from './compoments/welcome/welcome.component';
 import { NotfoundComponent } from './compoments/notfound/notfound.component';
 import { PostDetailsComponent } from './compoments/post-details/post-details.component';
 import { PostdetailsGuard } from './guards/postdetails.guard';
+import { RoutingModule } from './routing/routing.module';
 
-const my_routes = [
-  {path: 'list'   , component: PotsListComponent},
-  {path: 'welcome', component: WelcomeComponent},
-  {path: 'detail/:id', canActivate : [PostdetailsGuard] , component: PostDetailsComponent},
-  {path: ''       , redirectTo: '/Welcome' , pathMatch: 'full'},
-  {path: '**', component: NotfoundComponent}
-] ;
 
 
 
@@ -33,8 +27,9 @@ const my_routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(my_routes),
-    HttpClientModule // since la version Angular 4.3
+//    RouterModule.forRoot(my_routes),
+    HttpClientModule, // since la version Angular 4.3
+    RoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
